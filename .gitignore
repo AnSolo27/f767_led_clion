@@ -1,4 +1,5 @@
 cmake-build-debug-mingw_embedded
+cmake-build-release-mingw_embedded
 Debug
 # Object files
 *.o
