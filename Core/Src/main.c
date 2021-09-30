@@ -23,6 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <assert.h>
 
 /* USER CODE END Includes */
 
@@ -72,6 +73,7 @@ void StartSecondTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+static_assert(sizeof(int) % 4 == 0, "error");
 
 /* USER CODE END 0 */
 
@@ -249,7 +251,7 @@ void StartMainTask(void *argument) {
   /* Infinite loop */
   for(;;) {
       HAL_GPIO_TogglePin(Led_Blue_GPIO_Port, Led_Blue_Pin);
-      osDelay(100);
+      osDelay(200);
   }
   /* USER CODE END 5 */
 }
