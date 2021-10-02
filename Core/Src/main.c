@@ -70,6 +70,7 @@ void StartMainTask(void *argument);
 void StartSecondTask(void *argument);
 
 /* USER CODE BEGIN PFP */
+void main_thread(void);
 
 /* USER CODE END PFP */
 
@@ -252,10 +253,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartMainTask */
 void StartMainTask(void *argument) {
   /* USER CODE BEGIN 5 */
+  /* C++ */
+    main_thread();
   /* Infinite loop */
   for(;;) {
-      HAL_GPIO_TogglePin(Led_Blue_GPIO_Port, Led_Blue_Pin);
-      osDelay(summa(100, 100));
+
   }
   /* USER CODE END 5 */
 }
