@@ -46,11 +46,13 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc Drivers/STM32F7xx_HAL_Driver/Inc Drivers/STM32F7xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F7xx/Include Drivers/CMSIS/Include Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1)
+include_directories(Core/Inc Drivers/STM32F7xx_HAL_Driver/Inc Drivers/STM32F7xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F7xx/Include
+                    Drivers/CMSIS/Include Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
+                    Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 lib)
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx)
 
-file(GLOB_RECURSE SOURCES "Core/*.*" "Middlewares/*.*" "Drivers/*.*")
+file(GLOB_RECURSE SOURCES "Core/*.*" "Middlewares/*.*" "Drivers/*.*" "lib/*.*")
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F767ZITX_FLASH.ld)
 

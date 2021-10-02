@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include <assert.h>
 //from github, testing fetch/merge
+#include "some_lib.h"
 
 /* USER CODE END Includes */
 
@@ -254,7 +255,7 @@ void StartMainTask(void *argument) {
   /* Infinite loop */
   for(;;) {
       HAL_GPIO_TogglePin(Led_Blue_GPIO_Port, Led_Blue_Pin);
-      osDelay(200);
+      osDelay(summa(100, 100));
   }
   /* USER CODE END 5 */
 }
